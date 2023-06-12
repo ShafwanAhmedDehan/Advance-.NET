@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Education";
+}
+
+<h2>Education</h2>
+<ul>
+    @for (int i = 0; i < ViewBag.EDU.Length; i++)
+    {
+        <li>@ViewBag.EDU[i].degree</li>
+        <ul>
+            <li>@ViewBag.EDU[i].inst</li>
+            <li>@ViewBag.EDU[i].year</li>
+        </ul>
+    }
+</ul>
+
+
