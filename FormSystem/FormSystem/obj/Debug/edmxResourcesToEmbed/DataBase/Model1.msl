@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Adv_Dot_NetEntities">
+    <EntitySetMapping Name="UserInfoes">
+      <EntityTypeMapping TypeName="Model.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Prof" ColumnName="Prof" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

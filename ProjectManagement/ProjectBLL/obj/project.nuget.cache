@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Dae9Z3w3CrycecDd18zUfTfXm52/a0LW8ucCITZWR+ZMPNq0YDhtuNZ2TdI33a7RIg5t7Cyv17BHBDyBj1uVlQ==",
+  "success": true,
+  "projectFilePath": "D:\\ADV .NET\\ProjectManagement\\ProjectBLL\\ProjectBLL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\ahmed\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

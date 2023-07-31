@@ -1,0 +1,14 @@
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\CatagoryBusinessLL.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\CatagoryBusinessLL.pdb
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\AutoMapper.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\CatagoryDataAL.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\EntityFramework.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\CatagoryDataAL.pdb
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\CatagoryDataAL.dll.config
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\AutoMapper.xml
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\bin\Debug\EntityFramework.xml
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\obj\Debug\CatagoryBusinessLL.csproj.AssemblyReference.cache
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\obj\Debug\CatagoryBusinessLL.csproj.CoreCompileInputs.cache
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\obj\Debug\CatagoryBusinessLL.csproj.CopyComplete
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\obj\Debug\CatagoryBusinessLL.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryBusinessLL\obj\Debug\CatagoryBusinessLL.pdb

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "AdminDashBoard";
+}
+
+@{
+    int userId = Convert.ToInt32(Session["UserId"]);
+}
+
+<h2>AdminDashBoard</h2>
+
+<body>
+    <div class="container">
+        <a href="/ZeroHungerHome/RegistarStaff" class="register-button">Register Staff</a>
+        <a href="@Url.Action("OrderDetails", "ZeroHungerHome")" class="register-button">Requests</a>
+        <a href="@Url.Action("staffList", "ZeroHungerHome")" class="register-button">StaffList</a>
+        <a href="@Url.Action("LogOut", "ZeroHungerHome")" class="logout-button">Logout</a>
+        <br>
+    </div>
+</body>

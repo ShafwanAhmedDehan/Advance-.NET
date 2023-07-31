@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Zero_HungerEntities">
+    <EntitySetMapping Name="LogIninfoes">
+      <EntityTypeMapping TypeName="Model.LogIninfo">
+        <MappingFragment StoreEntitySet="LogIninfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestuarentInfoes">
+      <EntityTypeMapping TypeName="Model.RestuarentInfo">
+        <MappingFragment StoreEntitySet="RestuarentInfo">
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="RestuarantName" ColumnName="RestuarantName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="AcType" ColumnName="AcType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminStaffInfoes">
+      <EntityTypeMapping TypeName="Model.AdminStaffInfo">
+        <MappingFragment StoreEntitySet="AdminStaffInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="AcType" ColumnName="AcType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

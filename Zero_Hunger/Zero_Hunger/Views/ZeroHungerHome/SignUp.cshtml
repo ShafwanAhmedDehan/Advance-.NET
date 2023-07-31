@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "SignUp - Zero Hunger";
+}
+
+
+<title>Sign Up Page</title>
+
+<body>
+    <div class="container02">
+        <h2>Sign Up</h2>
+        <form style="align-content:center" method="post">
+            <input name="Email" type="email" placeholder="Email">
+            <span class="text-danger"><b>@Html.ValidationMessage("Email")</b></span>
+            <br>
+            <input name="Phone" type="tel" placeholder="Phone">
+            <span class="text-danger"><b>@Html.ValidationMessage("Phone")</b></span>
+            <br>
+            <input name="pass" type="password" placeholder="Password">
+            <span class="text-danger"><b>@Html.ValidationMessage("pass")</b></span>
+            <br>
+            <input name="RestaurantName" type="text" placeholder="Restaurant Name">
+            <span class="text-danger"><b>@Html.ValidationMessage("RestaurantName")</b></span>
+            <br>
+            <textarea name="Address" placeholder="Address" rows="4"></textarea>
+            <span class="text-danger"><b>@Html.ValidationMessage("Address")</b></span>
+            <br>
+            <input name="OwnerName" type="text" placeholder="Owner Name">
+            <span class="text-danger"><b>@Html.ValidationMessage("OwnerName")</b></span>
+            <br>
+
+            <input type="radio" name="AcType" value="101" style="display:none;" checked>
+            <br>
+            <input type="submit" value="Sign Up">
+        </form>
+        <p class="note">By signing up, you agree to our Terms and Privacy Policy.</p>
+        <b>@Html.ActionLink("Have an Account? LogIn", "LogIn")</b>
+    </div>
+</body>
+
+

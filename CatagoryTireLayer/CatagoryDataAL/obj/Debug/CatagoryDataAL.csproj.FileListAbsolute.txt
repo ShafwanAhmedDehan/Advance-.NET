@@ -1,0 +1,12 @@
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\bin\Debug\CatagoryDataAL.dll.config
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\bin\Debug\CatagoryDataAL.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\bin\Debug\CatagoryDataAL.pdb
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\bin\Debug\EntityFramework.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\bin\Debug\EntityFramework.xml
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\obj\Debug\CatagoryDataAL.csproj.AssemblyReference.cache
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\obj\Debug\CatagoryDataAL.csproj.CoreCompileInputs.cache
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\obj\Debug\CatagoryDataAL.csproj.CopyComplete
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\obj\Debug\CatagoryDataAL.dll
+D:\ADV .NET\CatagoryTireLayer\CatagoryDataAL\obj\Debug\CatagoryDataAL.pdb

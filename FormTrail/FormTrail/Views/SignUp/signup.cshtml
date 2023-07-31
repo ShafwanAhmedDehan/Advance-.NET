@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "signup";
+}
+
+<h2>signup</h2>
+
+@{ 
+    bool checkGender(string value)
+    {
+        if (Model != null && Model.Gender != null && Model.Gender.Equals(value))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool checkProf(string value)
+    {
+        if (Model != null && Model.Prof != null && Model.Prof.Equals(value))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool checkHobby(string value)
+    {
+        if (Model != null && Model.Hobbies != null && Model.Hobbies.Length>0)
+        {
+            for (int i = 0; i < Model.Hobbies.Length; i++)
+            {
+                if (Model.Hobbies[i].Equals(value))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+<form method="post">
+    <input type="text" name="Name" placeholder="Name " value="@(Model != null ? Model.Name : "")" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Name")</span>
+    <br />
+    <input type="text" name="Uname" placeholder="Username " value="@(Model != null ? Model.Uname : "")" class="form-control" />
+    <span class="text-danger">@Html.ValidationMessage("Uname")</span>
+    <br />
+    Gender : <input type="radio" name="Gender" checked="@checkGender("Male")" value="Male" /> Male
+    <input type="radio" name="Gender" checked="@checkGender("Female")" value="Female" /> Female
+    <span class="text-danger">@Html.ValidationMessage("Gender")</span>
+    <br />
+    Occupation :
+    <select class="form-control" name="Prof">
+        <option selected disabled>--Please Choose Option--</option>
+        <option selected="@checkProf("Student")">Student</option>
+        <option selected="@checkProf("Teacher")">Teacher</option>
+        <option selected="@checkProf("Housewife")">Housewife</option>
+        <option selected="@checkProf("Service Holder")">Service Holder</option>
+    </select>
+    <span class="text-danger">@Html.ValidationMessage("Prof")</span>
+    <br />
+    Hobby :
+    <input type="checkbox" checked="@checkHobby("Gaming")" name="Hobbies[]" value="Gaming" /> Gaming
+    <input type="checkbox" checked="@checkHobby("Travelling")" name="Hobbies[]" value="Travelling" /> Travelling
+    <input type="checkbox" checked="@checkHobby("Sports")" name="Hobbies[]" value="Sports" /> Sports
+    <input type="checkbox" checked="@checkHobby("Long Drive")" name="Hobbies[]" value="Long Drive" /> Long Drive
+    <br />
+    Date of Birth : <input type="date" value="@(Model != null ? Model.DOB : "")" name="DOB" />
+    <span class="text-danger">@Html.ValidationMessage("DOB")</span>
+    <br />
+    <input type="submit" value="Submit" class="btn btn-success" />
+</form>
+

@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "RegistarStaff -Zero Hunger";
+}
+
+
+<body>
+    <form class="stylish-form" method="post">
+        <h2>Staff Registration Form</h2>
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input type="text" id="name" name="Name" placeholder="Enter name">
+            <span class="text-danger"><b>@Html.ValidationMessage("Name")</b></span>
+
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="email" id="email" name="Email" placeholder="Enter email">
+            <span class="text-danger"><b>@Html.ValidationMessage("Email")</b></span>
+        </div>
+        <div class="form-group">
+            <label for="Phone">Phone</label>
+            <input type="tel" id="phone" name="Phone" placeholder="Enter phone number">
+            <span class="text-danger"><b>@Html.ValidationMessage("Phone")</b></span>
+
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" id="password" name="Password" placeholder="Enter password">
+            <span class="text-danger"><b>@Html.ValidationMessage("Password")</b></span>
+
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="Gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="Gender" value="female">
+                <label for="female">Female</label>
+                <span class="text-danger"><b>@Html.ValidationMessage("Gender")</b></span>
+                <br>
+                <input type="radio" name="AcType" value="102" style="display:none;" checked>
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+</body>
+

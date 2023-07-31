@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProjectManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectMember">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mid" Type="int" Nullable="false" />
+          <Property Name="pid" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ProjectMember_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="ProjectMember" Type="Self.ProjectMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectMember">
+              <PropertyRef Name="mid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectMember_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1" />
+          <End Role="ProjectMember" Type="Self.ProjectMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectMember">
+              <PropertyRef Name="pid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjectManagementModelStoreContainer">
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectMember" EntityType="Self.ProjectMember" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ProjectMember_Member" Association="Self.FK_ProjectMember_Member">
+            <End Role="Member" EntitySet="Member" />
+            <End Role="ProjectMember" EntitySet="ProjectMember" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectMember_Project" Association="Self.FK_ProjectMember_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="ProjectMember" EntitySet="ProjectMember" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjectManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ProjectMembers" Relationship="Self.FK_ProjectMember_Member" FromRole="Member" ToRole="ProjectMember" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProjectMembers" Relationship="Self.FK_ProjectMember_Project" FromRole="Project" ToRole="ProjectMember" />
+        </EntityType>
+        <EntityType Name="ProjectMember">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mid" Type="Int32" Nullable="false" />
+          <Property Name="pid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Member" Relationship="Self.FK_ProjectMember_Member" FromRole="ProjectMember" ToRole="Member" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_ProjectMember_Project" FromRole="ProjectMember" ToRole="Project" />
+        </EntityType>
+        <Association Name="FK_ProjectMember_Member">
+          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="ProjectMember" Type="Self.ProjectMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Member">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectMember">
+              <PropertyRef Name="mid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectMember_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1" />
+          <End Role="ProjectMember" Type="Self.ProjectMember" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectMember">
+              <PropertyRef Name="pid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjectManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <EntitySet Name="Projects" EntityType="Self.Project" />
+          <EntitySet Name="ProjectMembers" EntityType="Self.ProjectMember" />
+          <AssociationSet Name="FK_ProjectMember_Member" Association="Self.FK_ProjectMember_Member">
+            <End Role="Member" EntitySet="Members" />
+            <End Role="ProjectMember" EntitySet="ProjectMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectMember_Project" Association="Self.FK_ProjectMember_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ProjectMember" EntitySet="ProjectMembers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectManagementModelStoreContainer" CdmEntityContainer="ProjectManagementEntities">
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="ProjectManagementModel.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectMembers">
+            <EntityTypeMapping TypeName="ProjectManagementModel.ProjectMember">
+              <MappingFragment StoreEntitySet="ProjectMember">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="mid" ColumnName="mid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

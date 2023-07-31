@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "RequestGeneration";
+}
+
+<h2>Request Generation</h2>
+
+<body>
+    <form class="stylish-form" method="post">
+        <h2>Food Details</h2>
+        <div class="form-group">
+            <label for="Foodtype">Food Type</label>
+            <input type="text" id="food-type" name="Foodtype" placeholder="Enter food type">
+            <span class="text-danger"><b>@Html.ValidationMessage("Foodtype")</b></span>
+
+        </div>
+        <div class="form-group">
+            <label for="Preservationtime">Maximum Preservation Time</label>
+            <input type="number" id="preservation-time" name="Preservationtime" placeholder="Enter maximum preservation Hour">
+            <span class="text-danger"><b>@Html.ValidationMessage("Preservationtime")</b></span>
+
+        </div>
+        <div class="form-group">
+            <label for="Packetcount">Number of Packets</label>
+            <input type="number" id="packet-count" name="Packetcount" placeholder="Enter number of packets">
+            <span class="text-danger"><b>@Html.ValidationMessage("Packetcount")</b></span>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+</body>
+

@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "SignUpForm";
+}
+
+@{
+    bool checkGender(string value)
+    {
+        if (Model != null && Model.Gender != null && Model.Gender.Equals(value))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    bool checkProf(string value)
+    {
+        if (Model != null && Model.Prof != null && Model.Prof.Length > 0)
+        {
+            for (int i = 0; i < Model.Prof.Length; i++)
+            {
+                if (Model.Prof[i].Equals(value))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+    <h2>Sign Up </h2>
+
+    <form method="post">
+        <label for="Name"><b>Name : </b></label>
+        <input class="form-control" type="text" value="@(Model != null ? Model.Name : "")" name="Name" id="Name" />
+        <span class="text-danger"><b>@Html.ValidationMessage("Name")</b></span>
+        <br />
+
+        <label for="Uname"><b>Username : </b></label>
+        <input class="form-control" type="text" value="@(Model != null ? Model.Uname : "")" name="Uname" id="Uname" />
+        <span class="text-danger"><b>@Html.ValidationMessage("Uname")</b></span>
+        <br />
+
+        <b>Gender: </b> <input type="radio" checked="@checkGender("Male")" name="Gender" value="Male" /> Male
+        <input type="radio" name="Gender" checked="@checkGender("Female")" value="Female" /> Female
+        <span class="text-danger"><b>@Html.ValidationMessage("Gender")</b></span>
+        <br /> <br />
+
+        <label for="Prof"><b>Profession :</b></label>
+        <input type="checkbox" checked="@checkProf("Housewife")" id="Prof" name="Prof[]" value="Housewife" /> Housewife
+        <input type="checkbox" checked="@checkProf("Service Holder")" id="Prof" name="Prof[]" value="Service Holder" /> Service Holder
+        <input type="checkbox" checked="@checkProf("Software Engineer")" id="Prof" name="Prof[]" value="Software Engineer" /> Software Engineer
+        <input type="checkbox" checked="@checkProf("Teacher")" id="Prof" name="Prof[]" value="Teacher" />  Teacher
+        <span class="text-danger"><b>@Html.ValidationMessage("Prof")</b></span>
+        <br /> <br />
+
+        <label for="SID"><b>Student ID : </b></label>
+        <input class="form-control" type="text" value="@(Model != null ? Model.SID : "")" name="SID" id="SID" />
+        <span class="text-danger"><b>@Html.ValidationMessage("SID")</b></span>
+        <br />
+
+        <label for="email"><b>Email : </b></label>
+        <input class="form-control" type="text" value="@(Model != null ? Model.email : "")" name="email" id="email" />
+        <span class="text-danger"><b>@Html.ValidationMessage("email")</b></span>
+        <br /> <br />
+
+        <b>Date of Birth : </b><input type="date" name="DOB" />
+        <span class="text-danger"><b>@Html.ValidationMessage("DOB")</b></span>
+        <br /> <br />
+
+        <input type="submit" value="Submit" class="btn btn-success" />
+    </form>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "RequestStatus";
+ }
+
+<h2>RequestStatus</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Food Type</th>
+        <th>Presarvation Time (Hour)</th>
+        <th>Packet Number</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var item in Model)
+     {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Foodtype</td>
+            <td>@item.PreservationHour</td>
+            <td>@item.PacketCount</td>
+               @{ 
+                var status = "";
+                if (@item.Assign != null && @item.Status == 0)
+                {
+                    status = "Assigned Staff";
+                }
+                else
+                {
+                    if (@item.Status == 0)
+                    {
+                        status = "Request Submitted";
+                    }
+                    else
+                    {
+                        status = "Collected and Distributed";
+                    }
+                }
+            }
+            <td>@status</td>
+        </tr>
+     }   
+</table>

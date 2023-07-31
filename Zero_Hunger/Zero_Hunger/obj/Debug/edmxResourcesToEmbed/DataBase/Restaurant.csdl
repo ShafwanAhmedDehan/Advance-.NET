@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="LogIninfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="RestuarentInfoes" Relationship="Self.FK_RestuarentInfo_LogIninfo" FromRole="LogIninfo" ToRole="RestuarentInfo" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RestuarentInfo">
+    <Key>
+      <PropertyRef Name="RestuarantName" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="OwnerName" />
+      <PropertyRef Name="AcType" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="RestuarantName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OwnerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AcType" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LogIninfo" Relationship="Self.FK_RestuarentInfo_LogIninfo" FromRole="RestuarentInfo" ToRole="LogIninfo" />
+    <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="FK_RestuarentInfo_LogIninfo">
+    <End Role="LogIninfo" Type="Self.LogIninfo" Multiplicity="1" />
+    <End Role="RestuarentInfo" Type="Self.RestuarentInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogIninfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RestuarentInfo">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Zero_HungerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LogIninfoes" EntityType="Self.LogIninfo" />
+    <EntitySet Name="RestuarentInfoes" EntityType="Self.RestuarentInfo" />
+    <AssociationSet Name="FK_RestuarentInfo_LogIninfo" Association="Self.FK_RestuarentInfo_LogIninfo">
+      <End Role="LogIninfo" EntitySet="LogIninfoes" />
+      <End Role="RestuarentInfo" EntitySet="RestuarentInfoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
